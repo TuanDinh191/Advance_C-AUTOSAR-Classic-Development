@@ -150,7 +150,7 @@ int main()
     return 0;
 }
 ```
-- Hằng con trỏ (Constant Pointer) là một con trỏ chỉ trỏ duy nhất 1 địa chỉ của một đối tượng khi được khai báo. Không thể thay đổi địa chỉ sang của đối tượng khác khác khi dùng hằng con trỏ trỏ đến.
+- Hằng con trỏ (Constant Pointer) là một con trỏ chỉ trỏ duy nhất 1 địa chỉ của một đối tượng khi được khai báo. Không thể thay đổi địa chỉ sang đối tượng khác khác khi dùng hằng con trỏ trỏ đến.
 ```javascript
 #include <stdio.h>
 
@@ -173,12 +173,12 @@ int main()
 ```
 - Null pointer (Con trỏ null) là một con trỏ không trỏ đến bất kỳ đối tượng hay vùng nhơ nào hết.
 - Dùng con trỏ null để tránh con trỏ có thể trỏ đến vùng nhớ khác.
-- Sau khi thực hiện xong thao tác với con trỏ thì gán vê con trỏ null. 
+- Sau khi thực hiện xong thao tác với con trỏ thì gán về con trỏ null. 
 ```bash
 int *ptr = NULL;
 printf("%p",ptr); //Địa chỉ mặc định của con trỏ null là 0x00
 ```
-- Pointer to pointer (Con trỏ trỏ đến con trỏ) là con trỏ cấp 2 hoặc cấp cao hơn để trỏ đên địa chỉ của một con trỏ.
+- Pointer to pointer (Con trỏ trỏ đến con trỏ) là con trỏ cấp 2 hoặc cấp cao hơn để trỏ đến địa chỉ của một con trỏ.
 ```javascript
 int a = 5; 
 //Địa chỉ của biến a: 0x12 có giá trị là 5:
