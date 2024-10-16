@@ -171,7 +171,7 @@ int main()
     return 0;
 }
 ```
-- Null pointer (Con trỏ null) là một con trỏ không trỏ đến bất kỳ đối tượng hay vùng nhơ nào hết.
+- Null pointer (Con trỏ null) là một con trỏ không trỏ đến bất kỳ đối tượng hay vùng nhớ nào hết.
 - Dùng con trỏ null để tránh con trỏ có thể trỏ đến vùng nhớ khác.
 - Sau khi thực hiện xong thao tác với con trỏ thì gán về con trỏ null. 
 ```bash
