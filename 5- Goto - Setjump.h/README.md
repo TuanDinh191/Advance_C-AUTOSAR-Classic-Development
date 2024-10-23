@@ -82,7 +82,7 @@ int main()
 #### - Định nghĩa: 
 - Giống với goto thì khi dùng thư viện setjump cũng có thể kiểm soát luồn thực thi chương trình ngoài việc có thể nhảy ở nội bộ hàm thì setjump có thể nhảy từ địa chỉ hàm này qua hàm khác qua hai hàm chính là setjmp và longjmp chính mà điều goto không làm được, có thể xem setjump là một bản nâng cấp đối với goto.
 #### - Cách dùng:
-- Dùng setjump nội bộ trong hàm. Chương trình dưới đây nó sẽ thực thi là một vòng lặp vô tận bời vì khi dòng chương trình thực thi đến dòng longjmp thì nó sẽ nhảy đến dòng có chứa hàm setjmp tiếp tục theo dòng chương trình thì lại đến dòng longjmp cứ như vậy mà nó sẽ lặp lại liên tục đến vô tận.
+- Dùng setjump nội bộ trong hàm. Chương trình dưới đây nó sẽ thực thi là một vòng lặp vô tận bởi vì khi dòng chương trình thực thi đến dòng longjmp thì nó sẽ nhảy đến dòng có chứa hàm setjmp tiếp tục theo dòng chương trình thì lại đến dòng longjmp cứ như vậy mà nó sẽ lặp lại liên tục đến vô tận.
 ```javascipt
 #include <stdio.h>
 #include <setjmp.h>
