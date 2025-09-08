@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 int main()
 {
     void *ptr;
@@ -14,10 +14,17 @@ int main()
     printf("dia chi: %p, gia tri: %lf\n",ptr, *(double *)ptr);
 
     char c = 'C';
-
-    void *ptr1[] = {&a,&b,&c};
+    
+    char* str = "hello world";
+    
+    void *ptr1[] = {&a,&b,&c,str};
     printf("ptr[1] = %d\n",*(int *)ptr1[0]);
     printf("ptr[2] = %lf\n",*(double *)ptr1[1]);
     printf("ptr[3] = %c\n",*(char *)ptr1[2]);
-
+    printf("ptr[4] = %s\n",(char *)ptr1[3]);
+    printf("%d",sizeof(ptr1[3]));
+    for(int i = 0; i<strlen(str); i++)
+    {
+        printf("str[%d] = %c\n",i,*((char *)ptr1[3] +i));
+    }
 }
