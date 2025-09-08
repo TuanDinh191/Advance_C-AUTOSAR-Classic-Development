@@ -28,7 +28,7 @@ int main()
 
     int a = 20, b = 30; 
     //Gán địa chỉ của hàm add  
-    ptrTofunc2 = &add;
+    ptrTofunc2 = add;
 
     //Cách gọi hàm thứ hai 
     printf("%d",(*ptrTofunc2)(a,b));

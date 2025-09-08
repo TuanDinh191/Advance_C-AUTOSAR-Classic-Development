@@ -17,7 +17,13 @@ int tich(int a, int b)
 
 int thuong (int a, int b)
 {
-    return a/b;
+    if (b == 0)
+    {
+        printf("Khong the chia cho 0\n");
+        return 0;
+    }
+    else 
+        return a/b;
 }
 
 //Con trỏ hàm làm tham số truyền vào của một hàm
