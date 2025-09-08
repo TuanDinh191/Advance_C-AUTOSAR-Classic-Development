@@ -1,6 +1,27 @@
 
+
 # Bai 3 Pointer
-#### 1. Pointer
+#### 1.Endianness
+#### - Định nghĩa: 
+- Là qui tắc lưu trữ các byte của dữ liệu nhiều byte (multi byte) trong bộ nhớ máy tính. Dữ liệu lưu sẽ nằm ở byte thấp(LSB) hoặc byte cao(MSB).
+- Có 2 kiểu lưu: Little Endian và Big Endian.
+- Little Endian: sẽ lưu dữ liệu các byte thấp đến byte theo cao theo thứ tự địa chỉ từ thấp nhất đến cao nhất trong bộ nhớ.
+```
+Little Endian:
+Value: 0x12345678
+
+   (LSB)    0x78   0x56   0x34   0x12  (MSB)
+Address:    0x01   0x02   0x03   0x04
+```
+- Big Endian: sẽ lưu dữ liệu các byte thấp đến byte cao theo thứ tự địa chỉ từ địa chỉ cao nhất đến cao nhất trong bộ nhớ.
+```
+Big Endian:
+Value: 0x12345678
+
+   (MSB)    0x12   0x34   0x56   0x78  (LSB)
+Address:    0x01   0x02   0x03   0x04
+```
+#### 2. Pointer
 #### - Định nghĩa:
 - Con trỏ (pointer) là một biến chứa địa chỉ của một đối tượng khác (biến, mảng, hàm).
 - Kích thước của con trỏ phụ thuộc vào kiến trúc máy tính và trình biên dịch đồi với máy tính. Còn trên vi điều khiển thì phụ thuộc vào vi xử lí.
@@ -51,7 +72,7 @@ int main()
     return 0;
 }
 ```
-- Con trỏ kiểu void (Void Pointer): Con trỏ void trỏ đến bất kỳ địa chỉ nào mà không quan tâm tới kiểu dữ liệu của giá trị tại địa chỉ đó.
+- Con trỏ kiểu void (Void Pointer): Con trỏ void trỏ đến bất kỳ địa chỉ nào mà không quan tâm tới kiểu dữ liệu của giá trị tại địa chỉ đó. Con trỏ void sẽ được ứng dụng để trỏ đến địa chỉ nhiều biến đến nhiều kiểu dữ liệu khác nhau để quản lý mà mỗi biến không cần khai báo 1 con trỏ có kiểu dữ liệu tương ứng để quản lý. Khai báo con trỏ void sẽ tiết kiệm bộ nhớ hơn.
 
 ```javascripts
 #include <stdio.h>
@@ -150,7 +171,7 @@ int main()
     return 0;
 }
 ```
-- Hằng con trỏ (Constant Pointer) là một con trỏ chỉ trỏ duy nhất 1 địa chỉ của một đối tượng khi được khai báo. Không thể thay đổi địa chỉ sang đối tượng khác khác khi dùng hằng con trỏ trỏ đến.
+- Hằng con trỏ (Constant Pointer) là một con trỏ chỉ trỏ duy nhất 1 địa chỉ của một đối tượng khi được khai báo. Không thể thay đổi địa chỉ sang đối tượng khác khác khi dùng hằng con trỏ trỏ đến. Ứng dụng hằng con trỏ thường là trong thanh ghi khi hằng con trỏ đến địa chỉ của một thanh ghi, khi đặt tên biến hằng con trỏ sẽ là tên của thanh ghi đó và thanh ghi đó nó sẽ có chức năng cụ thể là gì. Nếu dùng biến con trỏ thông thường thì có thể trỏ đến địa chỉ thanh ghi khác lúc đó thực hiện thay đổi giá trị tại thanh ghi thì sẽ sai chức năng của thanh ghi đó việc dùng hằng con trỏ sẽ bảo đảm là chỉ có mục đích thay đổi giá trị tại thanh ghi đó không thể thay đỏi địa chỉ thanh ghi sang địa chỉ khác.
 ```javascript
 #include <stdio.h>
 
@@ -178,15 +199,59 @@ int main()
 int *ptr = NULL;
 printf("%p",ptr); //Địa chỉ mặc định của con trỏ null là 0x00
 ```
-- Pointer to pointer (Con trỏ trỏ đến con trỏ) là con trỏ cấp 2 hoặc cấp cao hơn để trỏ đến địa chỉ của một con trỏ.
+- Pointer to pointer (Con trỏ trỏ đến con trỏ) là con trỏ cấp 2 trỏ đến địa chỉ của một con trỏ cấp 1. 
 ```javascript
-int a = 5; 
 //Địa chỉ của biến a: 0x12 có giá trị là 5:
+int a = 5; 
 
-int *ptr1 = &a; 
 //Địa chỉ của biến con trỏ ptr1: 0xd2 nhưng có giá trị là 0x12 là địa chỉ của biến a
+int *ptr1 = &a; 
 
-int **ptr2 = &ptr1;
 // ptr2 là con trỏ cấp 2 
 //Địa chỉ của biến con trỏ ptr2: 0xf4 nhưng có giá trị là 0xd2 là địa chỉ của con trỏ ptr1  
+int **ptr2 = &ptr1;
+
+
+printf()
+```
+
+- Ứng dụng của con trỏ cấp 2 là phân tách chuỗi để phân tích dữ liệu cụ thể hơn là có thể là dữ liệu từ một cái cảm biến gửi về là nhiệt độ, độ ẩm, tên thiết bị, tình trạng thiết bị....
+```
+#include <stdio.h>
+
+void single_ptr(char *ptr)
+{
+   ptr+=6;
+}
+
+void double_ptr(char **ptr)
+{
+    *ptr+=6;
+}
+int main()
+{
+    
+    //Thông thường ta sẽ dùng con trỏ cấp 1 để lấy dữ liệu gửi về từ cảm biến   
+    char *str = "Hello world";
+ 
+    /*Ở đây nếu mà dùng hàm con trỏ có tham số truyền vào là con trỏ cấp 1 để 
+    phân tích chuỗi "Hello" đầu tiên thì sau khi ra khỏi hàm thì giá trị địa 
+    chỉ của con trỏ str phải tăng lên là 6 lần (theo kiểu char) sau khi thoát 
+    khỏi hàm single_ptr dùng để giả sử để phân tích chuỗi thì khi in ra giá trị 
+    str phải là World nhưng mà sau khi qua hàm single_ptr giá trị địa chỉ của 
+    str vẫn không thay đổi vẫn sẽ in ra là "Hello World */
+    single_ptr(str);
+    printf("outside: %s\n",str);
+    
+    /*Qua hàm double_str có tham số truyền vào là con trỏ cấp 2 giả sử ta dùng
+    nó để phân tách chuỗi "Hello" đầu tiên thì sau khi thoát khỏi hàm double_str 
+    thì giá trị địa chỉ str sau khi in ra lúc này sẽ là world thôi tức là ta có thể 
+    hiểu là sau khi dùng một hàm phân tách chuỗi rồi ta phải sang địa chỉ khác để 
+    phân tách chuỗi khác nếu dùng hàm có địa chỉ là tham số là con trỏ cấp 1 thì sau
+    khi phân tách thì giá trị địa chỉ của địa chỉ str vẫn không thay đổi khiến ta 
+    không thể dùng hàm con trỏ có tham số là con trỏ cấp 1 để phân tách 
+    chuỗi mới được*/
+    double_ptr(&str);
+    printf("outside: %s\n",str);
+}
 ```
