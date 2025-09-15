@@ -44,13 +44,13 @@ int main ()
 ```
 #### 2. Thư viện Assert
 #### - Định nghĩa: 
-- Dùng để kiểm tra điều kiện, khác với điều kiện `if/else` thì khi điều kiện đúng sai thì vẫn thực thi chương trình thì assert khi đúng thì vẫn thực thi chương trình nhưng khi điều kiện sai sẽ dừng hẳn chương trình kèm theo một thông điệp lỗi và báo thêm cụ thể là file nào dòng nào trong code chạy điều kiện sai.
+- Dùng để kiểm tra điều kiện, khác với điều kiện `if/else` thì khi điều kiện đúng sai thì vẫn thực thi chương trình thì assert khi đúng thì vẫn thực thi chương trình nhưng khi điều kiện sai sẽ dừng hẳn chương trình kèm theo một thông điệp lỗi và báo thêm cụ thể là file nào dòng nào trong code chạy điều kiện sai. 
 #### - Cách dùng:
 - assert(điều kiện && "thong diep loi")
 #### - Ứng dụng:
-
+- Ứng dụng của `assert` là kiểm tra lỗi trong giai đoạn phát triển chương trình hoặc là ứng dụng chưa release hoặc đưa ra thị trường sử dụng.
 ``` javascript
-#include <assert.h>
+#include <assert.h>las
 
 int main()
 {
