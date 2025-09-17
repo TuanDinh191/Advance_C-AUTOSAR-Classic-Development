@@ -1,4 +1,4 @@
-# Bài 8: Struct - Union
+# Bài 7: Struct - Union
 #### 1. Struct
 #### - Định nghĩa:
 - Là một kiểu cấu trúc dữ liệu do người dùng tự định nghĩa, bằng cách nhóm các kiểu dữ liệu khác nhau lại. Kích thước của struct là tổng của các thành phần cộng với padding (nếu có). Các thành phần sử dụng vùng nhớ khác nhau.
