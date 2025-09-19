@@ -122,5 +122,6 @@ int main()
 - Malloc : Cấp phát vùng nhớ , dữ liệu không được khởi tạo, dữ liệu tại vị trí cấp phát ở mỗi vùng nhớ là rác.
 - Calloc : Cấp phát vùng nhớ , dữ liệu được khởi tạo, dữ liệu tại vị trí cấp phát ở mỗi vùng nhớ là 0.
 - Realloc: Thay đổi kích thước chỉ dùng được khi có 1 vùng nhớ đã cấp phát, có thể tăng kích thước bằng cách cấp phát thêm bộ nhớ, giảm kích thước thì vùng nhớ sẽ bị cắt giảm, dữ liệu được cấp phát thêm không được khởi tạo có giá trị là rác.
-#### - Đặc điểm và ứng dụng của Stack và Heap:
+#### - Đặc điểm và ứng dụng của Stack và Heap: 
+<img width="973" height="1075" alt="image" src="https://github.com/user-attachments/assets/a978dfbc-08d4-40a5-8a82-48d017f77518" />
 
