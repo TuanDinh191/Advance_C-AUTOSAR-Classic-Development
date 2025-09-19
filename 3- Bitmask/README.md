@@ -1,5 +1,5 @@
 
-# Bai 6 Bitmask
+# Bai 3 Bitmask
 #### 1. Bitmask
 #### - Định nghĩa:
  - Bitmask là một kỹ thuật sử dụng các bit để lưu trữ và thao tác với các cờ (flags) hoặc trạng thái. Có thể sử dụng bitmask để đặt, xóa và kiểm tra trạng thái của các bit cụ thể trong một từ (word).
