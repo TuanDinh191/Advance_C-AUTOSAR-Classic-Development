@@ -1,6 +1,6 @@
 
 
-# Bai 3 Pointer
+# Bai 4 Pointer
 #### 1.Endianness
 #### - Định nghĩa: 
 - Là qui tắc lưu trữ các byte của dữ liệu nhiều byte (multi byte) trong bộ nhớ máy tính. Dữ liệu lưu sẽ nằm ở byte thấp(LSB) hoặc byte cao(MSB).
