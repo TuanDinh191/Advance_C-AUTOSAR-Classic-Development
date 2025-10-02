@@ -1,4 +1,4 @@
-# Bài 9: JSON
+# Bài 11: JSON
 #### 1. JSON
 #### - Định nghĩa:
 - JSON (JavaScript Object Notation) là một định dạng dữ liệu được sử dụng phổ biến trên trình duyệt web có thể hỗ trợ cho nhiều ngôn ngữ lập trình, bản chất của JSON là một chuỗi bên trong nó có thể chứa nhiều kiểu dữ liệu khác nhau, có thể chứa mảng, đối tượng.
