@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "read.h": "c",
+        "typeinfo": "c",
+        "stdlib.h": "c",
+        "list.h": "c",
+        "stdtypes.h": "c",
+        "write.h": "c",
+        "search.h": "c"
+    }
+}
