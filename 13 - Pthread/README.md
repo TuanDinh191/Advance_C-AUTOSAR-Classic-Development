@@ -392,10 +392,9 @@ int main()
 ```
 #### 6. So sánh Atomic & Mutex
 
-
-
-
-
+<p align = "center">
+<img width="658" height="348" alt="image" src="https://github.com/user-attachments/assets/03427a25-f90a-47f1-bbc2-f5b862468fc8" />
+ 
 #### 7. Biến điều kiện (Condition variable) 
 - Ở ví dụ dưới đây sẽ sử dụng `atomic` thì hàm receiver sẽ luôn đợi dữ liệu từ hàm `sender` ở trong dòng lặp while thì điều này vô tình sẽ gây ra cho CPU liên tục xử lý 1 cách vô ích gây giảm hiệu suất và chậm trễ khi cần xử lý những tác vụ khác đồng thời, lúc này dùng biến điều kiện để tối ưu hơn cho việc đồng bộ hóa giữa nhiều luồng với nhau.
 ```
