@@ -16,6 +16,10 @@ __+__ Cung cấp các cơ chế Alarm, Event, Resource giúp đồng bộ và b�
 
 #### - Phân lớp trong AUTOSAR:
 - AUTOSAR định nghĩa 1 kiến trúc phân lớp được thiết kế để xử lý và trừu tượng hóa các hoạt động khác nhau của mã nguồn. Từ đó giúp đội nhóm  dễ dàng quản lý và phát triển dự án theo hướng module hóa và linh hoạt trong việc tích hợp với bất kỳ module từ các nhóm phát triển khác
+
+ <p align = "center">
+ <img width="1601" height="798" alt="image" src="https://github.com/user-attachments/assets/5ecdf825-661e-483d-8aca-aa42e98174b8" />
+
 - AUTOSAR sẽ có 3 lớp chính: 
 __+__ ASW (Application Layer): Là lớp nằm trên cùng thì lớp này sẽ triển khai phần mềm ứng dụng cụ thể ở trên ô tô chứa các khối chức năng cụ thể, khối phần mềm ứng dụng (Software Component - SWC) để cụ thể hóa hành vi của 1 chiếc xe. (Ví dụ: điều khiển động cơ, hệ thống phanh, túi khí, cảnh báo, vv…) tức là mỗi SWC thực hiện 1 chức năng cụ thể trong hệ thống ECU. SWC chỉ quan tâm đến logic (tính toán số học, khởi động như thế nào), các SWC có thể giao tiếp với nhau và giao tiếp với phần cứng thông qua RTE.
 
@@ -47,7 +51,7 @@ ECU Abstraction, Hardware Abstraction Layer: trừu tượng hóa việc tương
 
 MCAL (Microcontroller Abstraction Layer): Phát triển các drivers trên MCU, cung cấp API để đọc ghi thao tác ở ngoại vi trên vi điều khiển giao tiếp trực tiếp với phần cứng cung cấp giao diện trừu tượng cho lớp trên sử dụng là lớp ECU Abstraction. 
 
-# - Phân loại trong AUTOSAR
+#### - Phân loại trong AUTOSAR
 - Trong AUTOSAR sẽ chia ra 2 loại là:
 __+__ AUTOSAR Classic: Đóng vai trò phần khung sườn, điều phối và vận hành những phần cốt lỗi của 1 chiếc xe, cung cấp tiêu chuẩn để phát triển tính năng cơ bản, những phần mềm cơ bản 1 chiếc ô tô phải có như điều khiển tốc độ, điều khiển mômen xoắn, kiểm soát dòng điện điện áp, chế độ lái,.... 
 
